@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>London House!</title>
+    <link rel="icon" sizes="57x57" href="{{ url_for('static', filename='img/apple-icon-57x57.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome.min.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+        <div class="container"><a class="navbar-brand" href="#">London House!</a><button data-toggle="collapse"
+                class="navbar-toggler" data-target="#navcol-1"></button>
+
+        </div>
+    </nav>
+    <header class="masthead text-white text-center pt-0"
+        style="background:url('{{ url_for('static', filename='img/bg-masthead.jpg') }}" ) no-repeat center
+        center;background-size:cover;">
+
+        <div class="container" style="transition: ;">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">Let's choose your house option you like!</h1>
+                </div>
+            </div><form action=# method="post">
+            <div class="row">
+                
+                    <div class="col-md-3">
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <div class="form-group">
+                            <label for="formControlRange">Bed rooms</label>
+                            <input type="range" class="form-control-range" id="formControlRange"
+                                onInput="$('#rangeval1').html($(this).val())" width="100%" min="1" max="10" name="bed"
+                                value="">
+                            <span id="rangeval1">6
+                                <!-- Default value -->
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="formControlRange">Bath rooms</label>
+                            <input type="range" class="form-control-range" id=""
+                                onInput="$('#rangeval2').html($(this).val())" width="100%" min="1" max="10" name="bath">
+                            <span id="rangeval2">6
+                                <!-- Default value -->
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="formControlRange">Floors</label>
+                            <input type="range" class="form-control-range" id="formControlRange"
+                                onInput="$('#rangeval3').html($(this).val())" width="100%" min="1" max="10"
+                                name="floor">
+                            <span id="rangeval3">6
+                                <!-- Default value -->
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="formControlRange">Living Square</label>
+                            <input type="range" class="form-control-range" id="formControlRange"
+                                onInput="$('#rangeval4').html($(this).val())" width="100%" min="700" max="6000"
+                                name="sqm">
+                            <span id="rangeval4">3350
+                                <!-- Default value -->
+                            </span>
+                        </div>
+                        
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="formControlRange">Lot square</label>
+                            <input type="range" class="form-control-range" id="formControlRange"
+                                onInput="$('#rangeval5').html($(this).val())" width="100%" min="1000" max="10000" name="lot"
+                                value="">
+                            <span id="rangeval5">5500
+                                <!-- Default value -->
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="formControlRange">Condition</label>
+                            <input type="range" class="form-control-range" id=""
+                                onInput="$('#rangeval6').html($(this).val())" width="100%" min="3" max="5" name="con">
+                            <span id="rangeval6">4
+                                <!-- Default value -->
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="formControlRange">Grade</label>
+                            <input type="range" class="form-control-range" id="formControlRange"
+                                onInput="$('#rangeval7').html($(this).val())" width="100%" min="5" max="11"
+                                name="grade">
+                            <span id="rangeval7">6
+                                <!-- Default value -->
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="formControlRange">Year</label>
+                            <input type="range" class="form-control-range" id="formControlRange"
+                                onInput="$('#rangeval8').html($(this).val())" width="100%" min="1950" max="2021"
+                                name="year">
+                            <span id="rangeval8">1985
+                                <!-- Default value -->
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <button  type="submit" class="btn btn-primary">Calculating</button>
+            </div>
+        </form>
+        {% if price:%}
+
+                <div style="display: flex; justify-content: center;">
+                    <!-- <p>House with {{bed}} bedroom,{{bath}} bath room,{{floor}} floor,{{sqm}} squere meter/</p> -->
+                    <div class="pt-5" style="font-size: 50px; ">Your house's price is about: {{price}} $</div>
+                </div>
+                {%endif%}
+
+
+        </div>
+        </div>
+    </header>
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 my-auto h-100 text-center text-lg-left">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item"><a href="#">About</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Contact</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">© Nguyễn Thế Thành Đạt 2021. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 my-auto h-100 text-center text-lg-right">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="https://www.facebook.com/juunirippou"><i
+                                    class="fa fa-facebook fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="https://github.com/ntthanhdat"><i
+                                    class="fa fa-github fa-2x fa-fw"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+
+</body>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</html>
