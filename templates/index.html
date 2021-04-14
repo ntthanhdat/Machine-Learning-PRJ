@@ -19,7 +19,7 @@
 
         </div>
     </nav>
-    <header class="masthead text-white text-center"
+    <header class="masthead text-white text-center pt-0"
         style="background:url('{{ url_for('static', filename='img/bg-masthead.jpg') }}" ) no-repeat center
         center;background-size:cover;">
 
@@ -28,16 +28,14 @@
                 <div class="col-xl-9 mx-auto">
                     <h1 class="mb-5">Let's choose your house option you like!</h1>
                 </div>
-            </div>
+            </div><form action=# method="post">
             <div class="row">
-                <div class="col-md-4">
+                
+                    <div class="col-md-3">
 
-                </div>
+                    </div>
+                    <div class="col-md-3">
 
-
-                {% if price:%}
-                <div class="col-md-3">
-                    <form action=# method="post">
                         <div class="form-group">
                             <label for="formControlRange">Bed rooms</label>
                             <input type="range" class="form-control-range" id="formControlRange"
@@ -65,64 +63,70 @@
                             </span>
                         </div>
                         <div class="form-group">
-                            <label for="formControlRange">Square</label>
+                            <label for="formControlRange">Living Square</label>
                             <input type="range" class="form-control-range" id="formControlRange"
-                                onInput="$('#rangeval4').html($(this).val())" width="100%" min="100" max="1000"
+                                onInput="$('#rangeval4').html($(this).val())" width="100%" min="700" max="6000"
                                 name="sqm">
-                            <span id="rangeval4">553
+                            <span id="rangeval4">3350
                                 <!-- Default value -->
                             </span>
                         </div>
-                        <button type="submit" class="btn btn-primary">Calculating</button>
-                    </form>
-                </div style="display: flex; justify-content: center;">
-                <div>
-                    <p>{{bed}},{{bath}},{{floor}},{{sqm}}</p>
-                <div class="pt-5" style="font-size: 50px; ">Your house's price is about: {{price}} $</div>
-            </div>
-                {% else %}
-                <div class="col-md-3">
-                    <form action=# method="post">
+                        
+
+                    </div>
+                    <div class="col-md-3">
                         <div class="form-group">
-                            <label for="formControlRange">Bed rooms</label>
+                            <label for="formControlRange">Lot square</label>
                             <input type="range" class="form-control-range" id="formControlRange"
-                                onInput="$('#rangeval1').html($(this).val())" width="100%" min="1" max="10" name="bed">
-                            <span id="rangeval1">6
+                                onInput="$('#rangeval5').html($(this).val())" width="100%" min="1000" max="10000" name="lot"
+                                value="">
+                            <span id="rangeval5">5500
                                 <!-- Default value -->
                             </span>
                         </div>
                         <div class="form-group">
-                            <label for="formControlRange">Bath rooms</label>
+                            <label for="formControlRange">Condition</label>
                             <input type="range" class="form-control-range" id=""
-                                onInput="$('#rangeval2').html($(this).val())" width="100%" min="1" max="10" name="bath">
-                            <span id="rangeval2">6
+                                onInput="$('#rangeval6').html($(this).val())" width="100%" min="3" max="5" name="con">
+                            <span id="rangeval6">4
                                 <!-- Default value -->
                             </span>
                         </div>
                         <div class="form-group">
-                            <label for="formControlRange">Floors</label>
+                            <label for="formControlRange">Grade</label>
                             <input type="range" class="form-control-range" id="formControlRange"
-                                onInput="$('#rangeval3').html($(this).val())" width="100%" min="1" max="10"
-                                name="floor">
-                            <span id="rangeval3">6
+                                onInput="$('#rangeval7').html($(this).val())" width="100%" min="5" max="11"
+                                name="grade">
+                            <span id="rangeval7">6
                                 <!-- Default value -->
                             </span>
                         </div>
                         <div class="form-group">
-                            <label for="formControlRange">Square</label>
+                            <label for="formControlRange">Year</label>
                             <input type="range" class="form-control-range" id="formControlRange"
-                                onInput="$('#rangeval4').html($(this).val())" width="100%" min="100" max="1000"
-                                name="sqm">
-                            <span id="rangeval4">500
+                                onInput="$('#rangeval8').html($(this).val())" width="100%" min="1950" max="2021"
+                                name="year">
+                            <span id="rangeval8">1985
                                 <!-- Default value -->
                             </span>
                         </div>
-                        <button type="submit" class="btn btn-primary">Calculating</button>
-                    </form>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <button  type="submit" class="btn btn-primary">Calculating</button>
+            </div>
+        </form>
+        {% if price:%}
+
+                <div style="display: flex; justify-content: center;">
+                    <!-- <p>House with {{bed}} bedroom,{{bath}} bath room,{{floor}} floor,{{sqm}} squere meter/</p> -->
+                    <div class="pt-5" style="font-size: 50px; ">Your house's price is about: {{price}} $</div>
                 </div>
                 {%endif%}
 
-            </div>
 
         </div>
         </div>
