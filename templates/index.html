@@ -63,7 +63,7 @@
                             </span>
                         </div>
                         <div class="form-group">
-                            <label for="formControlRange">Living Square</label>
+                            <label for="formControlRange">Living Square(sqft)</label>
                             <input type="range" class="form-control-range" id="formControlRange"
                                 onInput="$('#rangeval4').html($(this).val())" width="100%" min="700" max="6000"
                                 name="sqm">
@@ -76,7 +76,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="formControlRange">Lot square</label>
+                            <label for="formControlRange">Lot square(sqft)</label>
                             <input type="range" class="form-control-range" id="formControlRange"
                                 onInput="$('#rangeval5').html($(this).val())" width="100%" min="1000" max="10000" name="lot"
                                 value="">
@@ -97,7 +97,7 @@
                             <input type="range" class="form-control-range" id="formControlRange"
                                 onInput="$('#rangeval7').html($(this).val())" width="100%" min="5" max="11"
                                 name="grade">
-                            <span id="rangeval7">6
+                            <span id="rangeval7">8
                                 <!-- Default value -->
                             </span>
                         </div>
@@ -124,7 +124,18 @@
                 <div style="display: flex; justify-content: center;">
                     <!-- <p>House with {{bed}} bedroom,{{bath}} bath room,{{floor}} floor,{{sqm}} squere meter/</p> -->
                     <div class="pt-5" style="font-size: 50px; ">Your house's price is about: {{price}} $</div>
+                    
                 </div>
+                <div><ul class="list-group white-text">
+                    <li class="list-group-item list-group-item-info">Bed: {{bed}}</li>
+                    <li class="list-group-item list-group-item-info">Bath: {{bath}}</li>
+                    <li class="list-group-item list-group-item-info">Floor: {{floor}}</li>
+                    <li class="list-group-item list-group-item-info">Living Square: {{sqm}}</li>
+                    <li class="list-group-item list-group-item-info">Lot Square: {{lot}}</li>
+                    <li class="list-group-item list-group-item-info">Condition: {{con}}</li>
+                    <li class="list-group-item list-group-item-info">Grade: {{grade}}</li>
+                    <li class="list-group-item list-group-item-info">Year: {{year}}</li>
+                </ul></div>
                 {%endif%}
 
 
